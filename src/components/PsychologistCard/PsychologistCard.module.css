@@ -1,0 +1,210 @@
+.card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+  position: relative;
+}
+
+/* ===== Avatar ===== */
+.imageWrapper {
+  width: 120px;
+  height: 120px;
+  padding: 12px;
+  border: 2px solid rgba(52, 112, 255, 0.2);
+  border-radius: 30px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 100%;
+  max-width: 96px;
+  height: 100%;
+  max-height: 96px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* ===== Content ===== */
+.content {
+  flex: 1;
+}
+
+/* ===== Top row ===== */
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.role {
+  font-size: 16px;
+  font-weight: 500;
+  color: #8a8a89;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 500;
+  color: #191a15;
+  margin-top: 4px;
+}
+
+/* ===== Rating & price ===== */
+.meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.price {
+  color: #191a15;
+  font-weight: 500;
+  font-size: 16px;
+  padding-right: 12px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.value {
+  color: #38cd3e;
+}
+
+.price::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 16px;
+  background-color: rgba(25, 26, 21, 0.2);
+}
+
+/* ===== Favorite ===== */
+.favoriteBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== Chips ===== */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 4px;
+  margin: 24px 0;
+}
+
+.chip {
+  background: #f3f3f3;
+  border-radius: 24px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #8a8a89;
+}
+
+.chipValue {
+  color: #191a15;
+}
+
+/* ===== About ===== */
+.about {
+  color: rgba(25, 26, 21, 0.5);
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+/* ===== Read more ===== */
+.readMore {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #191a15;
+  text-decoration: underline;
+}
+
+/* ===== Reviews ===== */
+.reviews {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewerAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #dbe7ff;
+  color: #2f6fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.reviewer {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #191a15;
+  margin-bottom: 4px;
+}
+
+.reviewerRating {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+  color: #191a15;
+}
+
+.comment {
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(25, 26, 21, 0.5);
+}
+
+/* ===== Button ===== */
+.appointmentBtn {
+  display: inline-block;
+  margin-top: 40px;
+  background: #3470ff;
+  border: none;
+  border-radius: 30px;
+  max-width: 227px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
