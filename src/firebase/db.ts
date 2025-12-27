@@ -1,24 +1,16 @@
-import { ref, set, onValue } from "firebase/database";
+import { ref, set, get, onValue } from "firebase/database";
 import { db } from "./config";
+import type { PsychologistWithId } from "../types/psychologist";
 
-/* =====================
-   Тип пользователя
-===================== */
 export type UserProfile = {
   email: string;
   createdAt: number;
 };
 
-/* =====================
-   Сохранить пользователя
-===================== */
 export const saveUserProfile = async (uid: string, data: UserProfile) => {
   await set(ref(db, `users/${uid}`), data);
 };
 
-/* =====================
-   Подписка на пользователя (realtime)
-===================== */
 export const subscribeToUserProfile = (
   uid: string,
   callback: (data: UserProfile | null) => void
@@ -28,4 +20,17 @@ export const subscribeToUserProfile = (
   return onValue(userRef, (snapshot) => {
     callback(snapshot.val());
   });
+};
+
+export const getPsychologists = async () => {
+  const snapshot = await get(ref(db, "psychologists"));
+
+  if (!snapshot.exists()) {
+    return [];
+  }
+
+  return Object.entries(snapshot.val()).map(([id, value]) => ({
+    id,
+    ...(value as Omit<PsychologistWithId, "id">),
+  }));
 };

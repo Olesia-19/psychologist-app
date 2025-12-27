@@ -16,3 +16,7 @@ export interface Psychologist {
   initial_consultation: string;
   about: string;
 }
+
+export interface PsychologistWithId extends Psychologist {
+  id: string;
+}
