@@ -13,6 +13,12 @@
   color: #8a8a89;
 }
 
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 .loadMoreBtn {
   display: block;
   margin: 0 auto;

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { getPsychologists } from "../../firebase/db";
-// import Header from '../../components/Header'
+import Header from "../../components/Header/Header";
 import PsychologistCard from "../../components/PsychologistCard/PsychologistCard";
 import type { PsychologistWithId } from "../../types/psychologist";
 import CustomSelect from "../../components/CustomSelect/CustomSelect";
@@ -103,7 +103,7 @@ const PsychologistsPage = () => {
 
   return (
     <div>
-      {/* <Header/> */}
+      <Header />
       <div className={css.filters}>
         <label htmlFor="filterSort" className={css.label}>
           Filters
