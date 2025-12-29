@@ -1,4 +1,11 @@
-.home_page {
+.homePage {
+  display: flex;
+  gap: 125px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.infoWrapper {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -41,7 +48,7 @@
   padding: 18px 50px;
   width: 235px;
   height: 60px;
-  background: #54be96;
+  background-color: #54be96;
 
   font-family: var(--font-family);
   font-weight: 500;
@@ -50,4 +57,108 @@
   letter-spacing: -0.01em;
   color: #fbfbfb;
   text-wrap: nowrap;
+
+  transition: background-color 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #36a379;
+  color: #fbfbfb;
+}
+
+.button:active {
+  background-color: #54be96;
+}
+
+.imagesWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 464px;
+  aspect-ratio: 232 / 263;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.iconQuestion {
+  position: absolute;
+  top: 40%;
+  left: -8%;
+  width: 10%;
+  aspect-ratio: 1;
+  background-color: #4535af;
+  border-radius: 10px;
+  transform: rotate(-15deg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconUsers {
+  position: absolute;
+  top: 8%;
+  right: -8%;
+  width: 10%;
+  aspect-ratio: 1;
+  background-color: #fbc75e;
+  border-radius: 8px;
+  transform: rotate(15deg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge {
+  position: absolute;
+  bottom: 14%;
+  left: -23%;
+  background-color: #54be96;
+  color: white;
+  padding: 32px;
+  border-radius: 20px;
+  width: 70%;
+  height: 23%;
+
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconCheckWrapper {
+  border-radius: 13px;
+  width: 54px;
+  height: 54px;
+  background-color: #fbfbfb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.badgeText {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(251, 251, 251, 0.5);
+  text-wrap: nowrap;
+}
+
+.badgeNumber {
+  font-weight: 700;
+  font-size: 24px;
+  color: #fbfbfb;
 }
