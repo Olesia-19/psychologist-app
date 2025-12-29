@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home";
 import Psychologists from "./pages/Psychologists/Psychologists";
 // import Favorites from "./pages/Favorites";
 import Header from "./components/Header/Header";
+import ModalManager from "./components/ModalManager";
 // import Footer from "./components/Footer";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         {/* <Route path="/favorites" element={<Favorites />} /> */}
       </Routes>
       {/* <Footer /> */}
+      <ModalManager />
     </Router>
   );
 }

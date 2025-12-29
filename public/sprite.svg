@@ -18,16 +18,19 @@
     <symbol id="icon-check" viewBox="0 0 32 32">
       <path fill="#54be96" style="fill: var(--color1, #54be96)" d="M8 13.333l-2.667 2.667 8 8 13.333-13.333-2.667-2.667-10.667 10.667-5.333-5.333z"></path>
     </symbol>
+    <symbol id="icon-close-modal" viewBox="0 0 32 32">
+      <path stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M24 8 8 24M8 8l16 16"/>
+    </symbol>
     <symbol id="icon-clock" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M16 29.333c7.364 0 13.333-5.969 13.333-13.333S23.363 2.667 16 2.667C8.636 2.667 2.667 8.637 2.667 16S8.637 29.333 16 29.333z"/>
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M16 8v8l5.333 2.667"/>
     </symbol>
     <symbol id="icon-eye" viewBox="0 0 32 32">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M1.333 16S6.666 5.333 16 5.333 30.667 16 30.667 16 25.334 26.667 16 26.667C6.667 26.667 1.333 16 1.333 16z"/>
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M16 20a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+      <path stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M1.333 16S6.666 5.333 16 5.333 30.667 16 30.667 16 25.334 26.667 16 26.667C6.667 26.667 1.333 16 1.333 16z"/>
+      <path stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M16 20a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
     </symbol>
     <symbol id="icon-eye-off" viewBox="0 0 32 32">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M23.92 23.92A13.429 13.429 0 0 1 16 26.667C6.667 26.667 1.333 16 1.333 16A24.605 24.605 0 0 1 8.08 8.08m5.12-2.427a12.161 12.161 0 0 1 2.8-.32C25.333 5.333 30.667 16 30.667 16a24.646 24.646 0 0 1-2.88 4.253m-8.96-1.426a4.01 4.01 0 0 1-2.855 1.273 3.996 3.996 0 0 1-3.779-2.501 3.995 3.995 0 0 1 .056-3.127c.219-.491.534-.932.927-1.298M1.333 1.333l29.333 29.333"/>
+      <path stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M23.92 23.92A13.429 13.429 0 0 1 16 26.667C6.667 26.667 1.333 16 1.333 16A24.605 24.605 0 0 1 8.08 8.08m5.12-2.427a12.161 12.161 0 0 1 2.8-.32C25.333 5.333 30.667 16 30.667 16a24.646 24.646 0 0 1-2.88 4.253m-8.96-1.426a4.01 4.01 0 0 1-2.855 1.273 3.996 3.996 0 0 1-3.779-2.501 3.995 3.995 0 0 1 .056-3.127c.219-.491.534-.932.927-1.298M1.333 1.333l29.333 29.333"/>
     </symbol>
     <symbol id="icon-green-circle" viewBox="0 0 32 32">
       <path fill="#54be96" d="M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0s16 7.163 16 16z" style="fill:var(--color2, #54be96)"/>

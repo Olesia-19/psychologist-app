@@ -1,9 +1,12 @@
-import { useAuth } from "../../context/useAuth";
+import { useAuth } from "../../context/auth/useAuth";
+import { useModal } from "../../context/modal/useModal";
+import { ModalType } from "../../types/modal";
 import { logoutUser } from "../../firebase/auth";
 import css from "./Header.module.css";
 
 export default function Header() {
   const { user, loading } = useAuth();
+  const { openModal } = useModal();
 
   if (loading) {
     return <p>Loading...</p>;
@@ -38,7 +41,11 @@ export default function Header() {
         <div className={css.auth}>
           {!user ? (
             <>
-              <button type="button" className={css.loginBtn}>
+              <button
+                type="button"
+                onClick={() => openModal(ModalType.LOGIN)}
+                className={css.loginBtn}
+              >
                 Log in
               </button>
               <button type="button" className={css.registerBtn}>

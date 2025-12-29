@@ -1,6 +1,8 @@
 import { useState } from "react";
 import type { Psychologist } from "../../types/psychologist";
-import { useAuth } from "../../context/useAuth";
+import { useAuth } from "../../context/auth/useAuth";
+import { useModal } from "../../context/modal/useModal";
+import { ModalType } from "../../types/modal";
 import css from "./PsychologistCard.module.css";
 
 interface Props {
@@ -24,10 +26,11 @@ export default function PsychologistCard({ psychologist }: Props) {
   const { user, loading } = useAuth();
   const [isFavorite, setIsFavorite] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const { openModal } = useModal();
 
   const handleFavoriteClick = () => {
     if (!user) {
-      alert("Please log in to add psychologist to favorites");
+      openModal(ModalType.LOGIN);
       return;
     }
 

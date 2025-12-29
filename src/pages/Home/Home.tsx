@@ -28,8 +28,11 @@ const Home = () => {
       <div className={css.imagesWrapper}>
         <img
           src="/homeImg.webp"
+          srcSet="/homeImg@2x.webp 2x, /homeImg@3x.webp 3x"
           alt="Psychologist"
           width="464"
+          loading="lazy"
+          decoding="async"
           className={css.mainImage}
         />
 
