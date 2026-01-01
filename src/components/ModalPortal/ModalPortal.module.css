@@ -5,9 +5,12 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   z-index: 1000;
 }
 
@@ -16,12 +19,10 @@
   background-color: #fbfbfb;
   border-radius: 30px;
   padding: 64px;
-  /*2rem*/
   min-width: 320px;
-  max-width: 90%;
-  width: 510px;
-  max-height: 90%;
-  overflow-y: auto;
+  max-width: 600px;
+  /* max-height: 90%;
+  overflow-y: auto; */
 }
 
 .modalClose {

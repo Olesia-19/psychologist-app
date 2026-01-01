@@ -12,14 +12,12 @@
 }
 
 .title {
-  font-family: var(--font-family);
   font-weight: 600;
   font-size: 80px;
   line-height: 102%;
   letter-spacing: -0.02em;
   color: #191a15;
   margin-bottom: 20px;
-
   max-width: 595px;
 }
 
@@ -29,13 +27,10 @@
 }
 
 .subtitle {
-  font-family: var(--font-family);
-  font-weight: 500;
   font-size: 18px;
   line-height: 133%;
   letter-spacing: -0.02em;
   color: #191a15;
-
   max-width: 510px;
 }
 
@@ -50,10 +45,8 @@
   height: 60px;
   background-color: #54be96;
 
-  font-family: var(--font-family);
-  font-weight: 500;
   font-size: 20px;
-  line-height: 120%;
+  line-height: 1.2;
   letter-spacing: -0.01em;
   color: #fbfbfb;
   text-wrap: nowrap;

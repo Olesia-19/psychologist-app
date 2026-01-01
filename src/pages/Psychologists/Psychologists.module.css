@@ -7,7 +7,6 @@
 }
 
 .label {
-  font-weight: 500;
   font-size: 14px;
   line-height: 1.29;
   color: #8a8a89;
@@ -23,6 +22,7 @@
   display: block;
   margin: 0 auto;
   margin-top: 64px;
+  margin-bottom: 100px;
   border-radius: 30px;
   padding: 14px 48px;
   max-width: 176px;
@@ -30,10 +30,8 @@
   background: #54be96;
   border: none;
 
-  font-family: var(--font-family);
-  font-weight: 500;
   font-size: 16px;
-  line-height: 125%;
+  line-height: 1.25;
   letter-spacing: -0.01em;
   color: #fbfbfb;
 }

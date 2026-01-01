@@ -22,8 +22,8 @@
       <path stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M24 8 8 24M8 8l16 16"/>
     </symbol>
     <symbol id="icon-clock" viewBox="0 0 32 32">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M16 29.333c7.364 0 13.333-5.969 13.333-13.333S23.363 2.667 16 2.667C8.636 2.667 2.667 8.637 2.667 16S8.637 29.333 16 29.333z"/>
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M16 8v8l5.333 2.667"/>
+      <path stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M16 29.333c7.364 0 13.333-5.969 13.333-13.333S23.363 2.667 16 2.667C8.636 2.667 2.667 8.637 2.667 16S8.637 29.333 16 29.333z"/>
+      <path stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M16 8v8l5.333 2.667"/>
     </symbol>
     <symbol id="icon-eye" viewBox="0 0 32 32">
       <path stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M1.333 16S6.666 5.333 16 5.333 30.667 16 30.667 16 25.334 26.667 16 26.667C6.667 26.667 1.333 16 1.333 16z"/>

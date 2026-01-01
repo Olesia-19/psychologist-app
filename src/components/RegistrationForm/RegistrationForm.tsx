@@ -1,37 +1,51 @@
 import { useState } from "react";
 import { useModal } from "../../context/modal/useModal";
-import { loginUser } from "../../firebase/auth";
+import { registerUser } from "../../firebase/auth";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import css from "./LoginForm.module.css";
+import css from "./RegistrationForm.module.css";
+import { saveUserProfile } from "../../firebase/db";
 
 interface FormValues {
+  name: string;
   email: string;
   password: string;
 }
 
-export default function LoginForm() {
+export default function RegistrationForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [firebaseError, setFirebaseError] = useState<string | null>(null);
   const { closeModal } = useModal();
 
-  const initialValues: FormValues = { email: "", password: "" };
+  const initialValues: FormValues = { name: "", email: "", password: "" };
 
   const validationSchema = Yup.object({
-    email: Yup.string().email("Invalid email").required("Required"),
+    name: Yup.string().required("Required"),
+    email: Yup.string().trim().email("Invalid email").required("Required"),
     password: Yup.string().min(6, "Password too short").required("Required"),
   });
 
   const handleSubmit = async (values: FormValues) => {
     setFirebaseError(null);
     try {
-      await loginUser(values.email, values.password);
+      const user = await registerUser(
+        values.email,
+        values.password,
+        values.name
+      );
+
+      await saveUserProfile(user.uid, {
+        name: values.name,
+        email: values.email,
+        createdAt: Date.now(),
+      });
+
       closeModal();
     } catch (err: unknown) {
       if (err instanceof Error) {
         setFirebaseError(err.message);
       } else {
-        setFirebaseError("Failed to log in");
+        setFirebaseError("Registration failed");
       }
     }
   };
@@ -39,10 +53,11 @@ export default function LoginForm() {
   return (
     <div className={css.wrapper}>
       <div className={css.header}>
-        <h1 className={css.title}>Log In</h1>
+        <h1 className={css.title}>Registration</h1>
         <p className={css.subTitle}>
-          Welcome back! Please enter your credentials to access your account and
-          continue your search for a psychologist.
+          Thank you for your interest in our platform! In order to register, we
+          need some information. Please provide us with the following
+          information.
         </p>
       </div>
 
@@ -53,6 +68,14 @@ export default function LoginForm() {
       >
         {() => (
           <Form className={css.form}>
+            <Field
+              name="name"
+              type="text"
+              placeholder="Name"
+              className={css.input}
+            />
+            <ErrorMessage name="name" component="p" className={css.error} />
+
             <Field
               name="email"
               type="email"
@@ -89,7 +112,7 @@ export default function LoginForm() {
             {firebaseError && <p className={css.error}>{firebaseError}</p>}
 
             <button type="submit" className={css.btn}>
-              Log In
+              Sign Up
             </button>
           </Form>
         )}

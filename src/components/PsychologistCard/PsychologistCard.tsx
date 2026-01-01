@@ -1,12 +1,12 @@
 import { useState } from "react";
-import type { Psychologist } from "../../types/psychologist";
+import type { PsychologistWithId } from "../../types/psychologist";
 import { useAuth } from "../../context/auth/useAuth";
 import { useModal } from "../../context/modal/useModal";
 import { ModalType } from "../../types/modal";
 import css from "./PsychologistCard.module.css";
 
 interface Props {
-  psychologist: Psychologist;
+  psychologist: PsychologistWithId;
 }
 
 export default function PsychologistCard({ psychologist }: Props) {
@@ -39,6 +39,16 @@ export default function PsychologistCard({ psychologist }: Props) {
 
   const toggleReadMore = () => {
     setIsExpanded((prev) => !prev);
+  };
+
+  const handleAppointmentClick = () => {
+    openModal(ModalType.APPOINTMENT, {
+      psychologist: {
+        id: psychologist.id,
+        name: psychologist.name,
+        avatar_url: psychologist.avatar_url,
+      },
+    });
   };
 
   return (
@@ -140,7 +150,12 @@ export default function PsychologistCard({ psychologist }: Props) {
                 <p className={css.comment}>{review.comment}</p>
               </div>
             ))}
-            <button className={css.appointmentBtn}>Make an appointment</button>
+            <button
+              onClick={handleAppointmentClick}
+              className={css.appointmentBtn}
+            >
+              Make an appointment
+            </button>
           </div>
         )}
       </div>

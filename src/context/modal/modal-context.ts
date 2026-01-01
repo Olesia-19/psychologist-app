@@ -3,7 +3,8 @@ import type { ModalType } from "../../types/modal";
 
 interface ModalContextProps {
   modalType: ModalType | null;
-  openModal: (type: ModalType) => void;
+  modalData?: Record<string, unknown>;
+  openModal: (type: ModalType, data?: Record<string, unknown>) => void;
   closeModal: () => void;
 }
 

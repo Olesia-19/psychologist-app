@@ -3,6 +3,7 @@ import { db } from "./config";
 import type { PsychologistWithId } from "../types/psychologist";
 
 export type UserProfile = {
+  name: string;
   email: string;
   createdAt: number;
 };

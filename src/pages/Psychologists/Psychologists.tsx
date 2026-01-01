@@ -23,7 +23,6 @@ const PsychologistsPage = () => {
   const [psychologists, setPsychologists] = useState<PsychologistWithId[]>([]);
   const [visibleCount, setVisibleCount] = useState(CARDS_PER_PAGE);
   const [filterSort, setFilterSort] = useState<FilterSortOption>("all");
-  //   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -101,7 +100,7 @@ const PsychologistsPage = () => {
   ];
 
   return (
-    <div>
+    <div className="container">
       <div className={css.filters}>
         <label htmlFor="filterSort" className={css.label}>
           Filters
