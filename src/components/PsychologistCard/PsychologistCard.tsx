@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { PsychologistWithId } from "../../types/psychologist";
 import { useAuth } from "../../context/auth/useAuth";
+import { useFavorites } from "../../context/favorites/useFavorites";
 import { useModal } from "../../context/modal/useModal";
 import { ModalType } from "../../types/modal";
 import css from "./PsychologistCard.module.css";
@@ -23,8 +24,8 @@ export default function PsychologistCard({ psychologist }: Props) {
     reviews,
   } = psychologist;
 
-  const { user, loading } = useAuth();
-  const [isFavorite, setIsFavorite] = useState(false);
+  const { user } = useAuth();
+  const { toggleFavorite, isFavorite } = useFavorites();
   const [isExpanded, setIsExpanded] = useState(false);
   const { openModal } = useModal();
 
@@ -34,7 +35,7 @@ export default function PsychologistCard({ psychologist }: Props) {
       return;
     }
 
-    setIsFavorite((prev) => !prev);
+    toggleFavorite(psychologist.id);
   };
 
   const toggleReadMore = () => {
@@ -86,15 +87,12 @@ export default function PsychologistCard({ psychologist }: Props) {
             <button
               type="button"
               onClick={handleFavoriteClick}
-              className={`${css.favoriteBtn} ${
-                isFavorite ? css.isFavorite : ""
-              }`}
-              disabled={loading}
+              className={css.favoriteBtn}
             >
               <svg width="22" height="19" className={css.iconHeart}>
                 <use
                   href={
-                    isFavorite
+                    isFavorite(psychologist.id)
                       ? "/sprite.svg#icon-heart-green"
                       : "/sprite.svg#icon-heart"
                   }
