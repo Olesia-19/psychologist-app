@@ -12,6 +12,13 @@
   color: #8a8a89;
 }
 
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
 .list {
   display: flex;
   flex-direction: column;
