@@ -10,6 +10,7 @@ interface FormValues {
   name: string;
   email: string;
   password: string;
+  confirmPassword: string;
 }
 
 export default function RegistrationForm() {
@@ -17,12 +18,20 @@ export default function RegistrationForm() {
   const [firebaseError, setFirebaseError] = useState<string | null>(null);
   const { closeModal } = useModal();
 
-  const initialValues: FormValues = { name: "", email: "", password: "" };
+  const initialValues: FormValues = {
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  };
 
   const validationSchema = Yup.object({
     name: Yup.string().required("Required"),
     email: Yup.string().trim().email("Invalid email").required("Required"),
     password: Yup.string().min(6, "Password too short").required("Required"),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref("password")], "Passwords must match")
+      .required("Required"),
   });
 
   const handleSubmit = async (values: FormValues) => {
@@ -91,6 +100,7 @@ export default function RegistrationForm() {
                 placeholder="Password"
                 className={css.input}
               />
+
               <button
                 type="button"
                 onClick={() => setShowPassword((prev) => !prev)}
@@ -108,6 +118,37 @@ export default function RegistrationForm() {
               </button>
             </div>
             <ErrorMessage name="password" component="p" className={css.error} />
+
+            <div className={css.passwordWrapper}>
+              <Field
+                name="confirmPassword"
+                type={showPassword ? "text" : "password"}
+                placeholder="Confirm Password"
+                className={css.input}
+              />
+
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                className={css.eyeBtn}
+              >
+                <svg width="22" height="19" className={css.eyeIcon}>
+                  <use
+                    href={
+                      showPassword
+                        ? "/sprite.svg#icon-eye"
+                        : "/sprite.svg#icon-eye-off"
+                    }
+                  ></use>
+                </svg>
+              </button>
+            </div>
+
+            <ErrorMessage
+              name="confirmPassword"
+              component="p"
+              className={css.error}
+            />
 
             {firebaseError && <p className={css.error}>{firebaseError}</p>}
 
