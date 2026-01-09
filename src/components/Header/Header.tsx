@@ -20,18 +20,18 @@ export default function Header() {
             <span className={css.logoSpan}>psychologists.</span>services
           </a>
           <ul className={css.navMenu}>
-            <li className={css.navMenuItem}>
+            <li>
               <a href="/" className={css.navMenuLink}>
                 Home
               </a>
             </li>
-            <li className={css.listItem}>
+            <li>
               <a href="/psychologists" className={css.navMenuLink}>
                 Psychologists
               </a>
             </li>
             {user && (
-              <li className={css.listItem}>
+              <li>
                 <a href="/favorites" className={css.navMenuLink}>
                   Favorites
                 </a>
@@ -58,7 +58,7 @@ export default function Header() {
                 </button>
               </>
             ) : (
-              <div className={css.headerRight}>
+              <div className={css.desktopRight}>
                 <div className={css.userInfo}>
                   <div className={css.userIconWrapper}>
                     <svg width={24} height={24} className={css.userIcon}>
@@ -78,6 +78,31 @@ export default function Header() {
                 </button>
               </div>
             )}
+          </div>
+
+          <div className={css.rightControls}>
+            {user && (
+              <div className={css.userInfo}>
+                <div className={css.userIconWrapper}>
+                  <svg width={20} height={20} className={css.userIcon}>
+                    <use href="/sprite.svg#icon-user"></use>
+                  </svg>
+                </div>
+                <span className={css.userName}>
+                  {user.displayName || user.email}
+                </span>
+              </div>
+            )}
+
+            <button
+              type="button"
+              className={css.burgerBtn}
+              onClick={() => openModal(ModalType.MOBILE_MENU)}
+            >
+              <svg width={24} height={24} className={css.burgerIcon}>
+                <use href="/sprite.svg#icon-burger-menu"></use>
+              </svg>
+            </button>
           </div>
         </nav>
       </div>

@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <defs>
+  <symbol id="icon-burger-menu" viewBox="0 0 32 32">
+      <path d="M4.936 24.295c-.321 0-.59-.11-.808-.329s-.327-.493-.327-.82c0-.322.109-.591.327-.807s.488-.323.808-.323h22.127c.321 0 .591.11.812.329s.331.49.331.812a1.121 1.121 0 0 1-1.143 1.137H4.936zm0-7.159c-.321 0-.59-.11-.808-.329s-.327-.49-.327-.812c0-.322.109-.591.327-.806s.488-.323.808-.323h22.127c.321 0 .591.11.812.329s.331.49.331.812c0 .322-.11.591-.331.806s-.492.323-.812.323H4.936zm0-7.152c-.321 0-.59-.11-.808-.329s-.327-.493-.327-.82c0-.322.109-.591.327-.806s.488-.323.808-.323h22.127c.321 0 .591.11.812.329s.331.49.331.812a1.117 1.117 0 0 1-1.143 1.138H4.936z"/>
+    </symbol>
     <symbol id="icon-chevron-down" viewBox="0 0 32 32">
       <path fill="none" stroke="#fbfbfb" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="m8 12 8 8 8-8" style="stroke:var(--color1, #fbfbfb)"/>
     </symbol>

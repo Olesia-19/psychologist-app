@@ -1,0 +1,126 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.nav a {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+
+  transition: color 0.2s ease;
+}
+
+.nav a:hover,
+.nav a:focus {
+  color: #47a885;
+}
+
+.nav a.active {
+  color: #54be96;
+}
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginBtn,
+.logoutBtn {
+  border: 1px solid rgba(25, 26, 21, 0.2);
+  border-radius: 30px;
+  background-color: transparent;
+  padding: 10px 39px;
+  max-width: 135px;
+
+  font-size: 14px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: rgba(25, 26, 21, 0.5);
+  text-wrap: nowrap;
+
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.loginBtn:hover,
+.loginBtn:focus,
+.logoutBtn:hover,
+.logoutBtn:focus {
+  border-color: #54be96;
+  background-color: rgba(84, 190, 150, 0.08);
+}
+
+.loginBtn:active,
+.logoutBtn:active {
+  background-color: rgba(84, 190, 150, 0.16);
+  border-color: #47a885;
+}
+
+.registerBtn {
+  border-radius: 30px;
+  border: none;
+  padding: 11px 24px;
+  max-width: 171px;
+  background-color: #54be96;
+  max-width: 135px;
+
+  font-size: 14px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: #fbfbfb;
+  text-wrap: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.registerBtn:hover,
+.registerBtn:focus {
+  background-color: #36a379;
+}
+
+.registerBtn:active {
+  background-color: #54be96;
+}
+
+.authUser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.userInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.userName {
+  font-size: 14px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.userIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #54be96;
+}
+
+@media (min-width: 768px) {
+  .userInfo {
+    display: none;
+  }
+}

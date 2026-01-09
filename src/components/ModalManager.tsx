@@ -5,6 +5,7 @@ import { ModalType } from "../types/modal";
 import LoginForm from "./LoginForm/LoginForm";
 import RegistrationForm from "./RegistrationForm/RegistrationForm";
 import AppointmentForm from "./AppointmentForm/AppointmentForm";
+import MobileMenu from "./MobileMenu/MobileMenu";
 
 const ModalManager: React.FC = () => {
   const { modalType, modalData, closeModal } = useModal();
@@ -31,6 +32,8 @@ const ModalManager: React.FC = () => {
         } else {
           return null;
         }
+      case ModalType.MOBILE_MENU:
+        return <MobileMenu />;
       default:
         return null;
     }
