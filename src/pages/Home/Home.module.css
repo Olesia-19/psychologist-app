@@ -6,7 +6,6 @@
   margin-bottom: 60px;
 }
 
-/* ===== Info ===== */
 .infoWrapper {
   display: flex;
   flex-direction: column;
@@ -39,7 +38,6 @@
   max-width: 100%;
 }
 
-/* ===== Button ===== */
 .button {
   display: inline-flex;
   align-items: center;
@@ -70,7 +68,6 @@
   background-color: #54be96;
 }
 
-/* ===== Images ===== */
 .imagesWrapper {
   position: relative;
   width: 100%;
@@ -87,7 +84,6 @@
   display: block;
 }
 
-/* ===== Floating icons ===== */
 .iconQuestion {
   position: absolute;
   top: 42%;
@@ -118,7 +114,6 @@
   justify-content: center;
 }
 
-/* ===== Badge ===== */
 .badge {
   position: absolute;
   bottom: 10%;
@@ -165,10 +160,6 @@
   color: #fbfbfb;
 }
 
-/* =========================
-   TABLET ≥ 768px
-   ========================= */
-
 @media only screen and (min-width: 768px) {
   .homePage {
     align-items: center;
@@ -212,10 +203,6 @@
     font-size: 22px;
   }
 }
-
-/* =========================
-   DESKTOP ≥ 1280px
-   ========================= */
 
 @media only screen and (min-width: 1280px) {
   .homePage {

@@ -1,134 +1,56 @@
-🧠 Psychologists Marketplace
+# Psychologists Services App 🧠
 
-A web application for finding and booking professional psychologists.
-The platform allows users to browse specialists, sort them by different criteria, add psychologists to favorites, and book a personal appointment.
+A responsive single-page web application for finding psychologists and booking consultations.
 
-This project demonstrates a real-world marketplace-style application with authentication, protected routes, persistent user data, and dynamic content loading.
+Users can browse specialists, add them to favorites, and make appointments after authentication.
 
-🔗 Live Demo
+---
 
-👉
+## 🚀 Features
 
-✨ Features
+- Home page with service overview
+- Psychologists listing with detailed cards
+- Favorites functionality
+- Appointment booking
+- User authentication (login / registration)
+- Protected routes
+- Modal windows
+- Fully responsive (mobile / tablet / desktop)
 
-User authentication (Sign up / Log in / Log out) using Firebase
+---
 
-Public and private routes (Favorites page accessible only to authenticated users)
+## 🛠️ Tech Stack
 
-Psychologists catalog with:
+- React
+- TypeScript
+- Vite
+- React Router
+- Firebase (Authentication, Realtime Database)
+- CSS Modules
+- Netlify (deployment)
 
-sorting by name (A–Z / Z–A)
+---
 
-sorting by price (low → high / high → low)
+## 🎨 Design
 
-sorting by rating (low → high / high → low)
+- Responsive design based on Figma
+- Breakpoints: 320px / 768px / 1280px
 
-Lazy loading with Load more button
+---
 
-Add / remove psychologists to Favorites
+## ▶️ Run locally
 
-Persistent favorites state after page refresh
+```bash
+npm install
+npm run dev
+```
 
-Detailed psychologist card with Read more
+---
 
-Appointment booking form in modal window
+## 👩‍💻 Author
 
-Fully responsive layout (mobile, tablet, desktop)
+### Olesia Shakhrova
 
-🧩 Pages
+**Junior Full-Stack Developer** 👩‍💻
 
-Home – landing page with project introduction and call-to-action
-
-Psychologists – list of available psychologists with sorting and interaction
-
-Favorites (private) – list of psychologists added by the user
-
-🛠️ Technologies Used
-
-React
-
-TypeScript
-
-React Router
-
-Firebase Authentication
-
-Firebase Realtime Database
-
-react-hook-form
-
-yup
-
-Vite
-
-CSS / Styled Components (or your actual styling method)
-
-🔐 Authentication
-
-Authentication is implemented with Firebase:
-
-user registration
-
-login / logout
-
-access to protected routes
-
-user-specific favorites persistence
-
-🗂️ Database Structure
-
-Psychologists data is stored in Firebase Realtime Database with fields such as:
-
-name
-
-avatar_url
-
-specialization
-
-experience
-
-license
-
-price_per_hour
-
-rating
-
-reviews
-
-about
-
-initial_consultation
-
-📱 Responsiveness
-
-The application is fully responsive and correctly displayed on:
-
-mobile devices (from 320px)
-
-tablets
-
-desktops (up to 1440px)
-
-🚀 Deployment
-
-The project is deployed on:
-👉
-
-📌 Project Purpose
-
-This project was created as a portfolio application to demonstrate:
-
-working with Firebase
-
-building a scalable React application
-
-handling authentication and protected routes
-
-managing application state and user interactions
-
-implementing real-world UI/UX patterns
-
-👩‍💻 Author
-
-Olesia
-Junior Frontend / Fullstack Developer
+---

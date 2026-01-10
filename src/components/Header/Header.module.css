@@ -7,7 +7,7 @@ header {
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-between; /*added this for mobile*/
+  justify-content: space-between;
 }
 
 .logo {

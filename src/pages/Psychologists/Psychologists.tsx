@@ -124,7 +124,6 @@ const PsychologistsPage = () => {
         </ul>
       )}
 
-      {/* Load more */}
       {visibleCount < filteredAndSortedPsychologists.length && (
         <button onClick={handleLoadMore} className={css.loadMoreBtn}>
           Load more

@@ -10,9 +10,6 @@ import type { User } from "firebase/auth";
 
 import { auth } from "./config";
 
-/* =====================
-   Регистрация
-===================== */
 export const registerUser = async (
   email: string,
   password: string,
@@ -31,9 +28,6 @@ export const registerUser = async (
   return userCredential.user;
 };
 
-/* =====================
-   Логин
-===================== */
 export const loginUser = async (
   email: string,
   password: string
@@ -47,16 +41,10 @@ export const loginUser = async (
   return userCredential.user;
 };
 
-/* =====================
-   Логаут
-===================== */
 export const logoutUser = async () => {
   await signOut(auth);
 };
 
-/* =====================
-   Слушатель авторизации
-===================== */
 export const subscribeToAuth = (callback: (user: User | null) => void) => {
   return onAuthStateChanged(auth, callback);
 };
