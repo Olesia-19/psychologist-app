@@ -1,24 +1,29 @@
 .homePage {
   display: flex;
-  gap: 125px;
-  align-items: center;
-  margin-bottom: 100px;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 60px;
 }
 
+/* ===== Info ===== */
 .infoWrapper {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
+}
+
+.text {
+  max-width: 100%;
 }
 
 .title {
   font-weight: 600;
-  font-size: 80px;
-  line-height: 102%;
+  font-size: 36px;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   color: #191a15;
-  margin-bottom: 20px;
-  max-width: 595px;
+  margin-bottom: 16px;
 }
 
 .span {
@@ -27,29 +32,30 @@
 }
 
 .subtitle {
-  font-size: 18px;
-  line-height: 133%;
+  font-size: 14px;
+  line-height: 1.43;
   letter-spacing: -0.02em;
   color: #191a15;
-  max-width: 510px;
+  max-width: 100%;
 }
 
+/* ===== Button ===== */
 .button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 12px;
   border-radius: 30px;
-  padding: 18px 50px;
-  width: 235px;
-  height: 60px;
+  padding: 14px 36px;
+  width: fit-content;
+  height: 52px;
   background-color: #54be96;
 
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: #fbfbfb;
-  text-wrap: nowrap;
+  white-space: nowrap;
 
   transition: background-color 0.2s ease;
 }
@@ -64,11 +70,13 @@
   background-color: #54be96;
 }
 
+/* ===== Images ===== */
 .imagesWrapper {
   position: relative;
   width: 100%;
-  max-width: 464px;
+  max-width: 320px;
   aspect-ratio: 232 / 263;
+  margin: 0 auto;
 }
 
 .mainImage {
@@ -79,11 +87,12 @@
   display: block;
 }
 
+/* ===== Floating icons ===== */
 .iconQuestion {
   position: absolute;
-  top: 40%;
-  left: -8%;
-  width: 10%;
+  top: 42%;
+  left: -3%;
+  width: 12%;
   aspect-ratio: 1;
   background-color: #4535af;
   border-radius: 10px;
@@ -96,9 +105,9 @@
 
 .iconUsers {
   position: absolute;
-  top: 8%;
-  right: -8%;
-  width: 10%;
+  top: 6%;
+  right: -3%;
+  width: 12%;
   aspect-ratio: 1;
   background-color: #fbc75e;
   border-radius: 8px;
@@ -109,27 +118,27 @@
   justify-content: center;
 }
 
+/* ===== Badge ===== */
 .badge {
   position: absolute;
-  bottom: 14%;
-  left: -23%;
+  bottom: 10%;
+  left: -5%;
   background-color: #54be96;
   color: white;
-  padding: 32px;
-  border-radius: 20px;
-  width: 70%;
+  padding: 16px;
+  border-radius: 16px;
+  width: 85%;
   height: 23%;
 
   display: flex;
-  gap: 16px;
+  gap: 12px;
   align-items: center;
-  justify-content: center;
 }
 
 .iconCheckWrapper {
-  border-radius: 13px;
-  width: 54px;
-  height: 54px;
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
   background-color: #fbfbfb;
 
   display: flex;
@@ -140,18 +149,155 @@
 .badgeInfo {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .badgeText {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   color: rgba(251, 251, 251, 0.5);
-  text-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .badgeNumber {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 18px;
   color: #fbfbfb;
+}
+
+/* =========================
+   TABLET ≥ 768px
+   ========================= */
+
+@media only screen and (min-width: 768px) {
+  .homePage {
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 80px;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .title {
+    font-size: 56px;
+    max-width: 520px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .button {
+    font-size: 18px;
+    height: 56px;
+    padding: 16px 44px;
+    margin: 0 auto;
+  }
+
+  .imagesWrapper {
+    max-width: 420px;
+  }
+
+  .badge {
+    padding: 24px;
+    border-radius: 18px;
+    width: 75%;
+  }
+
+  .badgeNumber {
+    font-size: 22px;
+  }
+}
+
+/* =========================
+   DESKTOP ≥ 1280px
+   ========================= */
+
+@media only screen and (min-width: 1280px) {
+  .homePage {
+    display: flex;
+    flex-direction: row;
+    gap: 125px;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+
+  .infoWrapper {
+    gap: 40px;
+  }
+
+  .text {
+    text-align: left;
+  }
+
+  .title {
+    font-size: 80px;
+    margin-bottom: 20px;
+    max-width: 595px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    line-height: 1.33;
+    max-width: 510px;
+    margin: 0;
+  }
+
+  .button {
+    gap: 18px;
+    padding: 18px 50px;
+    width: 235px;
+    height: 60px;
+    font-size: 20px;
+
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .imagesWrapper {
+    max-width: 464px;
+  }
+
+  .iconQuestion {
+    top: 40%;
+    left: -8%;
+    width: 10%;
+  }
+
+  .iconUsers {
+    top: 8%;
+    right: -8%;
+    width: 10%;
+  }
+
+  .badge {
+    bottom: 14%;
+    left: -20%;
+    padding: 32px;
+    border-radius: 20px;
+    width: 70%;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .iconCheckWrapper {
+    width: 54px;
+    height: 54px;
+  }
+
+  .badgeInfo {
+    gap: 8px;
+  }
+
+  .badgeText {
+    font-size: 14px;
+  }
+
+  .badgeNumber {
+    font-size: 24px;
+  }
 }

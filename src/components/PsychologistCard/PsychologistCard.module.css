@@ -1,20 +1,21 @@
 .card {
   background: #ffffff;
   border-radius: 24px;
-  padding: 24px;
+  padding: 16px;
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 16px;
   position: relative;
-  max-width: 1184px;
+  width: 100%;
 }
 
 /* ===== Avatar ===== */
 .imageWrapper {
-  width: 120px;
-  height: 120px;
-  padding: 12px;
+  width: 100px;
+  height: 100px;
+  padding: 8px;
   border: 2px solid rgba(52, 112, 255, 0.2);
-  border-radius: 30px;
+  border-radius: 24px;
   flex-shrink: 0;
 
   display: flex;
@@ -24,9 +25,9 @@
 
 .avatar {
   width: 100%;
-  max-width: 96px;
+  max-width: 84px;
   height: 100%;
-  max-height: 96px;
+  max-height: 84px;
   border-radius: 15px;
   object-fit: cover;
 }
@@ -39,17 +40,17 @@
 /* ===== Top row ===== */
 .topRow {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .role {
-  font-size: 16px;
+  font-size: 14px;
   color: #8a8a89;
 }
 
 .name {
-  font-size: 24px;
+  font-size: 20px;
   color: #191a15;
   margin-top: 4px;
 }
@@ -57,7 +58,8 @@
 /* ===== Rating & price ===== */
 .meta {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
   align-items: center;
   font-size: 14px;
 }
@@ -70,25 +72,11 @@
 
 .price {
   color: #191a15;
-  font-size: 16px;
-  padding-right: 12px;
-  position: relative;
-  padding-left: 16px;
+  font-size: 14px;
 }
 
 .value {
   color: #38cd3e;
-}
-
-.price::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 16px;
-  background-color: rgba(25, 26, 21, 0.2);
 }
 
 /* ===== Favorite ===== */
@@ -96,21 +84,22 @@
   background: transparent;
   border: none;
   cursor: pointer;
+  padding: 0;
 }
 
 /* ===== Chips ===== */
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 4px;
-  margin: 24px 0;
+  gap: 8px;
+  margin: 16px 0;
 }
 
 .chip {
   background: #f3f3f3;
   border-radius: 24px;
-  padding: 8px 16px;
-  font-size: 16px;
+  padding: 8px 14px;
+  font-size: 14px;
   font-weight: 500;
   color: #8a8a89;
 }
@@ -123,31 +112,33 @@
 .about {
   color: rgba(25, 26, 21, 0.5);
   line-height: 1.25;
-  margin-bottom: 14px;
+  font-size: 14px;
+  margin-bottom: 12px;
 }
 
 /* ===== Read more ===== */
 .readMore {
   background: none;
   border: none;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
   color: #191a15;
   text-decoration: underline;
+  padding: 0;
 }
 
 /* ===== Reviews ===== */
 .reviews {
-  margin-top: 48px;
+  margin-top: 32px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 24px;
 }
 
 .review {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .reviewHeader {
@@ -157,19 +148,19 @@
 }
 
 .reviewerAvatar {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: rgba(84, 190, 150, 0.2);
   color: #54be96;
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .reviewer {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.25;
   color: #191a15;
   margin-bottom: 4px;
@@ -185,21 +176,111 @@
 }
 
 .comment {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.25;
   color: rgba(25, 26, 21, 0.5);
 }
 
 /* ===== Button ===== */
 .appointmentBtn {
-  display: inline-block;
-  margin-top: 40px;
+  margin-top: 32px;
   background: #54be96;
   border: none;
   border-radius: 30px;
-  max-width: 227px;
+  width: 100%;
   padding: 14px 32px;
   font-size: 16px;
   color: #fff;
-  text-wrap: nowrap;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* =========================
+   TABLET ≥ 768px
+   ========================= */
+
+@media only screen and (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .imageWrapper {
+    width: 120px;
+    height: 120px;
+    padding: 12px;
+    border-radius: 30px;
+  }
+
+  .avatar {
+    max-width: 96px;
+    max-height: 96px;
+  }
+
+  .topRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .name {
+    font-size: 22px;
+  }
+
+  .meta {
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+
+  .price {
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .price::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 16px;
+    background-color: rgba(25, 26, 21, 0.2);
+  }
+
+  .chip {
+    font-size: 15px;
+  }
+
+  .about {
+    font-size: 15px;
+  }
+
+  .appointmentBtn {
+    width: auto;
+    max-width: 227px;
+  }
+}
+
+/* =========================
+   DESKTOP ≥ 1280px
+   ========================= */
+
+@media only screen and (min-width: 1280px) {
+  .card {
+    max-width: 1184px;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+
+  .about {
+    font-size: 16px;
+  }
+
+  .reviews {
+    margin-top: 48px;
+  }
 }
