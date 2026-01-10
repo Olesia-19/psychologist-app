@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useAuth } from "../../context/auth/useAuth";
 import { useModal } from "../../context/modal/useModal";
 import { logoutUser } from "../../firebase/auth";
@@ -11,16 +12,16 @@ export default function MobileMenu() {
   return (
     <div className={css.menu}>
       <nav className={css.nav}>
-        <a href="/" onClick={closeModal}>
+        <Link to="/" onClick={closeModal}>
           Home
-        </a>
-        <a href="/psychologists" onClick={closeModal}>
+        </Link>
+        <Link to="/psychologists" onClick={closeModal}>
           Psychologists
-        </a>
+        </Link>
         {user && (
-          <a href="/favorites" onClick={closeModal}>
+          <Link to="/favorites" onClick={closeModal}>
             Favorites
-          </a>
+          </Link>
         )}
       </nav>
 

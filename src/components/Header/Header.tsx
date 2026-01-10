@@ -3,6 +3,7 @@ import { useModal } from "../../context/modal/useModal";
 import { ModalType } from "../../types/modal";
 import { logoutUser } from "../../firebase/auth";
 import css from "./Header.module.css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const { user, loading } = useAuth();
@@ -16,25 +17,25 @@ export default function Header() {
     <header>
       <div className="container">
         <nav>
-          <a href="/" className={css.logo}>
+          <Link to="/" className={css.logo}>
             <span className={css.logoSpan}>psychologists.</span>services
-          </a>
+          </Link>
           <ul className={css.navMenu}>
             <li>
-              <a href="/" className={css.navMenuLink}>
+              <Link to="/" className={css.navMenuLink}>
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/psychologists" className={css.navMenuLink}>
+              <Link to="/psychologists" className={css.navMenuLink}>
                 Psychologists
-              </a>
+              </Link>
             </li>
             {user && (
               <li>
-                <a href="/favorites" className={css.navMenuLink}>
+                <Link to="/favorites" className={css.navMenuLink}>
                   Favorites
-                </a>
+                </Link>
               </li>
             )}
           </ul>
