@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useModal } from "../../context/modal/useModal";
+import { ModalType } from "../../types/modal";
 import { createAppointment } from "../../firebase/appointments";
 import { useAuth } from "../../context/auth/useAuth";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -24,7 +25,7 @@ interface Props {
 
 export default function AppointmentForm({ psychologist }: Props) {
   const { user } = useAuth();
-  const { closeModal } = useModal();
+  const { openModal, closeModal } = useModal();
   const [isTimeOpen, setIsTimeOpen] = useState(false);
   const [firebaseError, setFirebaseError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -52,11 +53,16 @@ export default function AppointmentForm({ psychologist }: Props) {
   });
 
   const handleSubmit = async (values: FormValues) => {
+    if (!user) {
+      openModal(ModalType.LOGIN);
+      return;
+    }
+
     setFirebaseError(null);
     setIsSubmitting(true);
     try {
       await createAppointment({
-        userId: user?.uid,
+        userId: user.uid,
         psychologistId: psychologist.id,
         ...values,
         createdAt: Date.now(),
@@ -65,7 +71,7 @@ export default function AppointmentForm({ psychologist }: Props) {
       closeModal();
     } catch (err: unknown) {
       if (err instanceof Error) {
-        setFirebaseError(err.message);
+        setFirebaseError("Something went wrong. Please try again later.");
       } else {
         setFirebaseError("Failed to create appointment");
       }
